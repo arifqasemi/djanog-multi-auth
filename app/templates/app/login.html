@@ -1,0 +1,17 @@
+<form class="row g-3 needs-validation" method="POST" action="">
+  {% csrf_token %}
+  {{ form.email.label_tag }}
+  {{ form.email }}
+  {{ form.email.errors }}
+  {{ form.password.label_tag }}
+  {{ form.password }}
+  {{ form.password.errors}}
+
+{{error_message}}
+  <div class="col-12">
+    <button class="btn btn-primary w-100" type="submit">Log In</button>
+  </div>
+  <div class="col-12">
+    <p class="small mb-0">Don't have an account? <a href="{% url 'manager_register' %}">Sign Up</a></p>
+  </div>
+</form>
